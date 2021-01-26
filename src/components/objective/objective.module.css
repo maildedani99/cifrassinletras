@@ -1,0 +1,12 @@
+.__objective_div {
+    display: flex;
+    flex-direction: row;
+    border: 7px solid#ff5959;
+    box-shadow: 0 0 7px #ff5959;
+    border-radius: 1rem;
+    padding: 0rem 3rem;
+}
+.__objective_number {
+    font-size: 8rem;
+    font-family: 'Permanent Marker', cursive;
+}

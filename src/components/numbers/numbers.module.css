@@ -1,0 +1,15 @@
+
+.__numbers_div{
+    display: flex;
+    flex-direction: row;
+}
+
+.__numbers_number_div {
+    border: 7px solid #4eb8ca;
+    box-shadow: 0 0 7px #4eb8ca;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 4rem;
+    font-family: 'Permanent Marker', cursive;
+    margin: 1rem;
+}
