@@ -13,3 +13,15 @@
     font-family: 'Permanent Marker', cursive;
     margin: 1rem;
 }
+.__numbers_number_div:hover {
+    cursor: pointer;
+}
+.__operator_div {
+}
+.__operator_div>p {
+    font-size: 3rem;
+    font-family: 'Permanent Marker', cursive;
+}
+.__numbers_reset_button {
+    font-size: 2rem;
+}
