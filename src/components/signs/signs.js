@@ -1,26 +1,33 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./signs.module.css";
+import { NumbersContext } from "../../contexts/numberscontext";
+const Signs = (props) => {
 
-const Signs = () => {
+  const { } = useContext(NumbersContext);
+const { suma, resta, multi, divi, equal, equalClick, signClick } = props;
+  /* const { signClick } = props; */
 
-    const suma = "+";
-    const resta = "-";
-    const multi = "x";
-    const divi = "/";
+  
+
+  
+    
 
   return (
     <div className={styles.__signs_div}>
       <div className={styles.__signs_sign_div}>
-        <a>{suma}</a>
+        <a onClick={signClick} name={suma}>{suma}</a>
       </div>
       <div className={styles.__signs_sign_div}>
-        <a>{resta}</a>
+        <a onClick={signClick} name={resta}>{resta}</a>
       </div>
       <div className={styles.__signs_sign_div}>
-        <a>{multi}</a>
+        <a onClick={signClick} name={multi}>{multi}</a>
       </div>
       <div className={styles.__signs_sign_div}>
-        <a>{divi}</a>
+        <a onClick={signClick} name={divi}>{divi}</a>
+      </div>
+      <div className={styles.__signs_sign_div}>
+        <a onClick={equalClick} name={equal}>{equal}</a>
       </div>
     </div>
   );

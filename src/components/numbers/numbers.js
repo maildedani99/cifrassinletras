@@ -1,55 +1,39 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import styles from "./numbers.module.css";
-import Operator from "../operator/operator";
-import Signs from "../signs/signs";
+import { AccessContext } from "../../contexts/accesscontext";
+import Signs from '../signs/signs';
 
-const Numbers = (props) => {
-  const number1 = 34;
-  const number2 = 1;
-  const number3 = 45;
-  const number4 = 9;
-  const number5 = 21;
-  const numberArray = [number1, number2, number3, number4, number5];
-  const [factor, setFactor] = useState("");
-  const [factor2, setFactor2] = useState("");
+const Numbers = (props) => { 
 
-  const [line, setLine] = useState("");
+  const { room } = useContext(AccessContext);
+  
+const { numberClick , factor1, factor2, setResult } = props;  
 
-  const numberClick = (event) => {
-    factor ? setFactor2(event.target.name) : setFactor(event.target.name);
-  };
-  const createLine = (factor) => {
-    setLine(line + factor);
-  };
-
-  const reset = () => {
-      setFactor("");
-      setFactor2("");
-  };
+let array;
+  let dani = [25,25,21,2,12,1]
+  useEffect(() => {
+    
+    
+    console.log(Array.from(dani))
+  },[])
 
   return (
     <>
-      <div className={styles.__numbers_div}>
-        {numberArray.map((item) => (
-          <div className={styles.__numbers_number_div}>
-            <a factor1={factor} name={item} onClick={numberClick}>
-              {item}
-            </a>
-          </div>
-        ))}
+      <div className={styles.__game_left_div}>
+        <div className={styles.__div_keys}>
+          
+        {[25,23,1].map((item) => (
+            <div className={styles.__numbers_number_div}>
+              <a name={item} onClick={numberClick} >
+                {item}
+              </a>
+            </div>
+          ))}
+        </div>
+        <div className={styles.__div_keys}>
+          
+        </div>
       </div>
-      <Signs />
-      <div className={styles.__operator_div}>
-        <p>
-          {factor}+{factor2} ={" "}
-        </p>
-      </div>
-      <input
-        type="button"
-        value="Reset"
-        className={styles.__numbers_reset_button}
-        onClick={reset}
-      />
     </>
   );
 };

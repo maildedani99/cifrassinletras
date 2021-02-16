@@ -1,0 +1,19 @@
+.__playerslist_div {
+    margin-top: 3rem;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.__div_list {
+    padding: 1rem;
+    min-height: 50%;
+    margin-top: 3rem;
+    align-self: center;
+    border: 7px solid #7fa1a7;
+    box-shadow: 0 0 7px #7fa1a7;
+    border-radius: 1rem;
+    width: 60%;
+    font-size: 1.5rem;
+
+}

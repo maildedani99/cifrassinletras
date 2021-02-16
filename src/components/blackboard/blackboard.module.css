@@ -1,0 +1,19 @@
+.__blackboard {
+    margin-top: 3rem;
+    width: 80%;
+    min-height: 50vh;
+    background-color: #434750;
+    align-self: center;
+    color: #fff;
+    border-radius: 2rem;
+    padding: 2rem;
+}
+.__operator_div>a {
+    font-size: 3rem;
+    margin-left: 1rem;
+    font-family: 'Permanent Marker', cursive;
+}
+.__numbers_reset_button {
+    font-size: 2rem;
+    align-self: baseline;
+}
