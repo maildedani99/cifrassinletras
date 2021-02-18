@@ -19,6 +19,7 @@ const GamePanel = (props) => {
   const multi = "x";
   const divi = "/";
   const equal = "=";
+  var array = [1,2,3,4,5,6];
   const [operations, setOperations] = useState({
     line1: [],
     line2: [],
@@ -56,7 +57,7 @@ const GamePanel = (props) => {
     /* forceUpdate() */
   };
 
-  const numberClick = (event) => {
+ /*  const numberClick = (event) => {
     let click = parseInt(event.target.name)
     if (factor1 == 0) {
       setFactor1(click);
@@ -87,7 +88,7 @@ const GamePanel = (props) => {
       operations.line1.push(event.target.name )
       room.array.push(event.target.name)
       console.log("has clicado equal")
-  }
+  } */
   
 
   useEffect(() => {
@@ -99,6 +100,7 @@ const GamePanel = (props) => {
       <div className={styles.__header_div}>
         <div className={styles.__header_div_keyboard}>
           <Numbers
+            array={array}
             factor1={factor1}
             factor2={factor2}
             result={result}
