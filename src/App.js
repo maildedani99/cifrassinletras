@@ -4,8 +4,8 @@ import Main from './pages/main/main';
 import Login from './pages/login/login';
 import CreateRoom from './pages/createroom/createroom';
 import { LOGIN, MAIN, CREATEROOM } from './routes';
-import { NumbersProvider } from './contexts/numberscontext';
 import { AccessProvider } from './contexts/accesscontext';
+import { NumbersProvider } from './contexts/numberscontext';
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
@@ -14,21 +14,22 @@ function App() {
     <div className={styles.__app_container}>
       <AccessProvider>
 
-    <NumbersProvider>
+    
       <Router>
       <Switch>
           <Route exact path={LOGIN}>
             <Login />
           </Route>
-          <Route exact path={MAIN}>
-            <Main />
-          </Route>
           <Route exact path={CREATEROOM}>
             <CreateRoom />
           </Route>
+          <NumbersProvider>
+          <Route exact path={MAIN}>
+            <Main />
+          </Route>
+          </NumbersProvider>
         </Switch>
       </Router>
-    </NumbersProvider>
       </AccessProvider>
     </div>
   );

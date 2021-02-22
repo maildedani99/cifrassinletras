@@ -2,6 +2,7 @@
 .__numbers_div{
     display: flex;
     flex-direction: row ;
+   
 }
 .__game_left_div {
     display: flex;
@@ -11,9 +12,11 @@
 .__div_keys {
     display: flex;
     flex-direction: row;
+
 }
 
 .__numbers_number_div {
+    
     display: flex;
     flex-direction: row;
     border: 4px solid #4eb8ca;

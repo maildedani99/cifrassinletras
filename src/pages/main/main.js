@@ -3,10 +3,12 @@ import styles from "./main.module.css";
 import GamePanel from "../gamepanel/gamepanel";
 import PlayersList from "../playerslist/playerslist";
 import Navbar from "../../components/navbar/navbar";
+import { NumbersProvider } from '../../contexts/numberscontext';
 
 const Main = () => {
   return (
     <>
+    
       <div className={styles.__main_container}>
         <Navbar />
         <div className={styles.__game_div}>

@@ -6,11 +6,39 @@ let { Provider, Consumer } = NumbersContext;
 
 const NumbersProvider = ({ children }) => {
   
-  const [array, setArray ] = useState([])
-  const [objective, setObjective] = useState()
+  const [array, setArray ] = useState([45,2,15,21,32,6]);
+  const [objective, setObjective] = useState(521);
+  const [factor1, setFactor1] = useState();
+  const [factor2, setFactor2] = useState();
+  const [ clickedNumber, setClickedNumber ] = useState();
+  const [clikedSign, setClickedSign] = useState();
+  const [product, setProduct] = useState();
+  const [calcLine, setCalcLine] = useState([]);
+  /* const suma = "+";
+  const resta = "-";
+  const multi = "x";
+  const divi = "/";
+  const equal = "="; */
+  const [signsArray, setSignsArray] = useState(["+", "-", "x", "/"]);
   
-  
-  const getNumbers = async () => {
+  const pushOnLine =(number)=>{
+    calcLine.push(number);
+    setCalcLine([...calcLine]); 
+  }
+  const pushArray = (number) => {
+    array.push(number);
+      setArray([...array]);
+  }
+  const handleCalcLine = (factor, sign) => {
+    factor==0 || sign!=0 ? console.log("error") : <></>
+
+  }
+  const removeNumber = (number) => {
+    let y = array.indexOf(number);
+    array.splice(y,1);
+    setArray([...array]);
+  }
+  /* const getNumbers = async () => {
     const url = "http://localhost:4000/numbers";
     const options = {
       method: "GET",
@@ -31,12 +59,9 @@ const NumbersProvider = ({ children }) => {
 
       })
       .catch((error) => console.log(error));
-  };
+  }; */
   
-  useEffect(() => {
-     
-   
-  },[])
+ 
   /* const sumar = () => {
     let x = (parseInt(factor1)+parseInt(factor2))
     console.log(x)
@@ -49,7 +74,7 @@ const NumbersProvider = ({ children }) => {
   }; */ 
   return (
     <Provider
-      value={{ array, objective }}
+      value={{ array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2, clickedNumber, setClickedNumber, clikedSign, setClickedSign, signsArray, setSignsArray, calcLine, setCalcLine, pushOnLine, handleCalcLine, pushArray, removeNumber }}
     >
       {children}
     </Provider>

@@ -1,61 +1,83 @@
 import React, { useContext, useState, useEffect } from "react";
 import styles from "./blackboard.module.css";
-import OperatorLine from '../operatorline/operatorline';
-import { NumbersContext } from '../../contexts/numberscontext';
+import { NumbersContext } from "../../contexts/numberscontext";
 
-const Blackboard = (props) => {
-  const { operations, blackboardKey } = props;
+const Blackboard = () => {
+  const {
+    clickedNumber,
+    clickedSign,
+    calcLine,
+    setCalcLine,
+    array,
+    setArray,
+    product,
+    setProduct,
+    pushOnLine,
+    pushArray,
+    removeNumber
+  } = useContext(NumbersContext);
 
-   
-
-
-
+    const reset = () => {
+    setArray([45,2,15,21,32,6]);
+    setCalcLine([])
+  }
+  const calculate =  () => {
+    let a = calcLine[0];
+    let b = calcLine[1];
+    let c = calcLine[2];
+    let d;
+    console.log(a + b + c)
+    switch (b) {
+      case "+": d=(a+c);
+        break;
+      case "-": d=(a-c);
+        break;
+      case "x": d=(a*c);
+        break;
+      case "/": d=(a/c);
+        break;
+    }
+    console.log(d)
+    return d;
+  };
+  const getResult = () => {
+    console.log(calcLine.length)
+    if (calcLine.length != 3) {
+      console.log("calcline no es 2")
+      return};
+    if (Number.isInteger(calcLine[0]) && Number.isInteger(calcLine[2])) {
+      if (Number.isInteger(calcLine[1])) {
+        return;
+      }else {
+        pushOnLine("=");
+        let a = calculate();
+        pushOnLine(a);
+        pushArray(a)
+        console.log(a);
+      }
+    } 
+  }
   useEffect(() => {
-      console.log(operations.line1)
-   })
+  },[]);
 
   return (
     <div className={styles.__blackboard}>
-      
       <div className={styles.__operator_div}>
-       {operations.line1.map((item) => (
-         <a key={blackboardKey}>
-           {item} 
-         </a>
-       ))}
+        {calcLine.map((item) => (
+          <a>{item} </a>
+        ))}
       </div>
-      <div className={styles.__operator_div}>
-       {operations.line2.map((item) => (
-         <a>
-           {item} 
-         </a>
-       ))}
-      </div>
-      <div className={styles.__operator_div}>
-       {operations.line3.map((item) => (
-         <a>
-           {item} 
-         </a>
-       ))}
-      </div>
-      <div className={styles.__operator_div}>
-       {operations.line4.map((item) => (
-         <a>
-           {item} 
-         </a>
-       ))}
-      </div>
-      <input
-        type="button"
-        value="sumar"
-        className={styles.__numbers_reset_button}
-        /* onClick={calcular} */
-      />
       <input
         type="button"
         value="Reset"
         className={styles.__numbers_reset_button}
-        /* onClick={reset} */
+        onClick={reset}
+      />
+      <input
+        type="button"
+        value="="
+        className={styles.__numbers_reset_button}
+        onClick={getResult}
       />
     </div>
   );

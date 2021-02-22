@@ -2,16 +2,10 @@ import React, { useEffect, useState, useContext } from "react";
 import styles from "./objective.module.css";
 import { NumbersContext } from "../../contexts/numberscontext";
 
-const Objective = () => {
+const Objective = (props) => {
 
   
   const { objective } = useContext(NumbersContext);
-  
-  
-  
-  useEffect(() => {
-  },[])
-  
 
   return (
     <div>

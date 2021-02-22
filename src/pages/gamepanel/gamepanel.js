@@ -4,59 +4,15 @@ import Objective from "../../components/objective/objective";
 import Numbers from "../../components/numbers/numbers";
 import Blackboard from "../../components/blackboard/blackboard";
 import { AccessContext } from "../../contexts/accesscontext";
+import {  NumbersContext } from '../../contexts/numberscontext';
 import Signs from "../../components/signs/signs";
 
-const GamePanel = (props) => {
+const GamePanel = () => {
   const { room, getRoom } = useContext(AccessContext);
-    const [factor1, setFactor1] = useState("");
-  const [factor2, setFactor2] = useState("");
-  const [result, setResult] = useState();
-  const [sign, setSign] = useState();
- 
-  const [blackboardKey, setBlackboardKey] = useState(1);
-  const suma = "+";
-  const resta = "-";
-  const multi = "x";
-  const divi = "/";
-  const equal = "=";
-  var array = [1,2,3,4,5,6];
-  const [operations, setOperations] = useState({
-    line1: [],
-    line2: [],
-    line3: [],
-    line4: [],
-    line5: [],
-    line6: [],
-  });
+  const { array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2 } = useContext(NumbersContext);
   
 
-  const numberRemove = (item) => {
-    const found = room.array.indexOf(
-      (element) => parseInt(element) == parseInt(item)
-    );
-   
-    /* array.splice(found, 1); */
-  };
-
-  const calculate =  () => {
-    
-    switch (sign) {
-      case "+":
-        setResult(parseInt(factor1) + parseInt(factor2));
-        break;
-      case "-":
-        setResult(parseInt(factor1) - parseInt(factor2));
-        break;
-      case "x":
-        setResult(parseInt(factor1) * parseInt(factor2));
-        break;
-      case "/":
-        setResult(parseInt(factor1) / parseInt(factor2));
-        break;
-    }
-    /* forceUpdate() */
-  };
-
+  
  /*  const numberClick = (event) => {
     let click = parseInt(event.target.name)
     if (factor1 == 0) {
@@ -89,41 +45,18 @@ const GamePanel = (props) => {
       room.array.push(event.target.name)
       console.log("has clicado equal")
   } */
-  
-
-  useEffect(() => {
-    getRoom()
-  }, []);
+ 
   return (
     <div  className={styles.__gamepanel_div}>
       <h1>Game Panel </h1>
       <div className={styles.__header_div}>
         <div className={styles.__header_div_keyboard}>
-          <Numbers
-            array={array}
-            factor1={factor1}
-            factor2={factor2}
-            result={result}
-            numberClick={numberClick}
-          />
-          <Signs
-            suma={suma}
-            resta={resta}
-            divi={divi}
-            multi={multi}
-            equal={equal}
-            equalClick={equalClick}
-            signClick={signClick}
-          />
+          <Numbers/>
+          <Signs/>
         </div>
-        <Objective />
+        <Objective/>
       </div>
-      <Blackboard
-        factor1={factor1}
-        factor2={factor2}
-        result={result}
-        operations={operations}
-      />
+      <Blackboard />
     </div>
   );
 };
