@@ -14,6 +14,40 @@
     font-family: 'Permanent Marker', cursive;
 }
 .__numbers_reset_button {
-    font-size: 2rem;
-    align-self: baseline;
+    cursor: pointer;
+    margin: 2rem 0rem;
+    background-color: #f44336;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+}
+.__numbers_equal_button {
+    cursor: pointer;
+
+    margin: 2rem 1rem;
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+}
+.__result_button {
+    align-self: center;
+    cursor: pointer;
+    margin-top: 0.3rem;
+    background-color: #f44336;
+    border: none;
+    padding: 1rem 2rem;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
 }

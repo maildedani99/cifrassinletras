@@ -18,8 +18,8 @@ const addSing = (sign) => {
   return (
     <div className={styles.__signs_div}>
       {signsArray.map((item) => (
-        <div className={styles.__signs_sign_div}>
-          <a onClick={(e)=> clickSign(item)}>{item}</a>
+        <div onClick={(e)=> clickSign(item)} className={styles.__signs_sign_div}>
+          <a >{item}</a>
         </div>
       ))}
     </div>

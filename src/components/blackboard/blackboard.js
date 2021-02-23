@@ -14,71 +14,150 @@ const Blackboard = () => {
     setProduct,
     pushOnLine,
     pushArray,
-    removeNumber
+    removeNumber,
   } = useContext(NumbersContext);
+  const [numberLine, setNumberLine] = useState(1);
+  const [line1, setLine1] = useState([]);
+  const [line2, setLine2] = useState([]);
+  const [line3, setLine3] = useState([]);
+  const [line4, setLine4] = useState([]);
+  const [line5, setLine5] = useState([]);
 
-    const reset = () => {
-    setArray([45,2,15,21,32,6]);
-    setCalcLine([])
-  }
-  const calculate =  () => {
+  const reset = () => {
+    setArray([45, 2, 15, 21, 32, 6]);
+    setCalcLine([]);
+    setLine1([]);
+    setLine2([]);
+    setLine3([]);
+    setLine4([]);
+    setLine5([]);
+    setNumberLine(1);
+  };
+  const calculate = () => {
     let a = calcLine[0];
     let b = calcLine[1];
     let c = calcLine[2];
     let d;
-    console.log(a + b + c)
+    console.log(a + b + c);
     switch (b) {
-      case "+": d=(a+c);
+      case "+":
+        d = a + c;
         break;
-      case "-": d=(a-c);
+      case "-":
+        d = a - c;
         break;
-      case "x": d=(a*c);
+      case "x":
+        d = a * c;
         break;
-      case "/": d=(a/c);
+      case "/":
+        d = a / c;
         break;
     }
-    console.log(d)
+    if (Number.isInteger(d) == false) {
+      d = "return is not integer";
+    }
+    console.log(d);
     return d;
   };
   const getResult = () => {
-    console.log(calcLine.length)
     if (calcLine.length != 3) {
-      console.log("calcline no es 2")
-      return};
+      return;
+    }
     if (Number.isInteger(calcLine[0]) && Number.isInteger(calcLine[2])) {
       if (Number.isInteger(calcLine[1])) {
         return;
-      }else {
+      } else {
         pushOnLine("=");
         let a = calculate();
-        pushOnLine(a);
-        pushArray(a)
-        console.log(a);
+        if (!Number.isInteger(a)) {
+          pushOnLine("Result is not integer");
+          setTimeout(() => reset(), 2000);
+        } else {
+          pushOnLine(a);
+          pushArray(a);
+          console.log(a);
+          addLines(numberLine);
+        }
       }
-    } 
-  }
-  useEffect(() => {
-  },[]);
+    }
+  };
+  const addLines = (numberLine) => {
+    switch (numberLine) {
+      case 1:
+        setLine1([...calcLine]);
+        break;
+      case 2:
+        setLine2([...calcLine]);
+        break;
+      case 3:
+        setLine3([...calcLine]);
+        break;
+      case 4:
+        setLine4([...calcLine]);
+        break;
+      case 5:
+        setLine5([...calcLine]);
+        break;
+    }
+    setCalcLine([]);
+    setNumberLine(numberLine + 1);
+  };
+  useEffect(() => {}, []);
 
   return (
     <div className={styles.__blackboard}>
       <div className={styles.__operator_div}>
-        {calcLine.map((item) => (
+        {line1.map((item) => (
+          <a>{item} </a>
+        ))}
+        
+      </div>
+      <div className={styles.__operator_div}>
+        {line2.map((item) => (
           <a>{item} </a>
         ))}
       </div>
-      <input
-        type="button"
-        value="Reset"
-        className={styles.__numbers_reset_button}
-        onClick={reset}
-      />
-      <input
-        type="button"
-        value="="
-        className={styles.__numbers_reset_button}
-        onClick={getResult}
-      />
+      <div className={styles.__operator_div}>
+        {line3.map((item) => (
+          <a>{item} </a>
+        ))}
+      </div>
+      <div className={styles.__operator_div}>
+        {line4.map((item) => (
+          <a>{item} </a>
+        ))}
+      </div>
+      <div className={styles.__operator_div}>
+        {line5.map((item) => (
+          <a>{item} </a>
+        ))}
+      </div>
+
+      <div className={styles.__operator_div}>
+        {calcLine.map((item) => (
+          <a>{item} </a>
+
+        ))}
+        {calcLine.length == 3 ? (
+          <input
+            type="button"
+            value="="
+            className={styles.__numbers_equal_button}
+            onClick={getResult}
+          />
+        ) : (
+          <></>
+        )}
+      </div>
+      <div></div>
+      <div>
+        <input
+          type="button"
+          value="Reset"
+          className={styles.__numbers_reset_button}
+          onClick={reset}
+        />
+      </div>
     </div>
   );
 };
