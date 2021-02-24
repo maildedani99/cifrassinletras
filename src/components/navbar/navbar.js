@@ -41,7 +41,7 @@ const Navbar = () => {
   return (
     <div className={styles.__navbar}>
       <div className={styles.__navbar_item}>
-        <h1>Navbar</h1>
+        <h1>Juego Cifras</h1>
       </div>
       <div className={styles.__navbar_item}>
         <p>Alias: {alias.alias}</p>
