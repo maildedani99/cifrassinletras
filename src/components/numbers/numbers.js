@@ -8,7 +8,7 @@ import Signs from '../signs/signs';
 const Numbers = (props) => { 
 
   
-  const { array, setArray, objective, product, factor1, factor2, setFactor1, setFactor2,  setClickedNumber, clickedNumber, calcLine, setCalcLine, pushOnLine, removeNumber } = useContext(NumbersContext);
+  const { array, setArray, objective, product, factor1, factor2, setFactor1, setFactor2,  setClickedNumber, clickedNumber, calcLine, setCalcLine, pushOnLine, removeNumber, finalResult, setFinalResult } = useContext(NumbersContext);
   
 
 
@@ -16,9 +16,8 @@ const clickNumber = (e) => {
         removeNumber(e);
         pushOnLine(e);
 }
-const pushResult = () => {
-  product && array.push(product)
-}
+
+
   return (
     <>
       <div className={styles.__game_left_div}>

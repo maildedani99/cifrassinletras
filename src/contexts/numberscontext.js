@@ -10,6 +10,7 @@ const NumbersProvider = ({ children }) => {
   const [objective, setObjective] = useState(521);
   const [factor1, setFactor1] = useState();
   const [factor2, setFactor2] = useState();
+  const [finalResult, setFinalResult] = useState();
   const [ clickedNumber, setClickedNumber ] = useState();
   const [clikedSign, setClickedSign] = useState();
   const [product, setProduct] = useState();
@@ -74,7 +75,7 @@ const NumbersProvider = ({ children }) => {
   }; */ 
   return (
     <Provider
-      value={{ array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2, clickedNumber, setClickedNumber, clikedSign, setClickedSign, signsArray, setSignsArray, calcLine, setCalcLine, pushOnLine, handleCalcLine, pushArray, removeNumber }}
+      value={{ array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2, clickedNumber, setClickedNumber, clikedSign, setClickedSign, signsArray, setSignsArray, calcLine, setCalcLine, pushOnLine, handleCalcLine, pushArray, removeNumber, finalResult, setFinalResult }}
     >
       {children}
     </Provider>

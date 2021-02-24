@@ -9,42 +9,23 @@ import Signs from "../../components/signs/signs";
 
 const GamePanel = () => {
   const { room, getRoom } = useContext(AccessContext);
-  const { array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2 } = useContext(NumbersContext);
+  const { array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2, finalResult, setFinalResult} = useContext(NumbersContext);
   
 
-  
- /*  const numberClick = (event) => {
-    let click = parseInt(event.target.name)
-    if (factor1 == 0) {
-      setFactor1(click);
-      operations.line1.push(click);
-      numberRemove(factor1);
-      console.log(factor2);
-    } else {
-      if (sign != 0) {
-        setFactor2(click);
-        operations.line1.push(click);
-        operations.line1.push("=");
-        console.log(operations.line1);
-        calculate();
-      } else return;
-    }
-  };
-  const signClick = (event) => {
-    if (factor1 != 0 && factor2 == 0) {
-      setSign(event.target.name);
-      operations.line1.push(event.target.name);
-      console.log(sign);
-    } else {
-      setSign("");
-      return;
-    }
-  };
-  const equalClick = (event) => {
-      operations.line1.push(event.target.name )
-      room.array.push(event.target.name)
-      console.log("has clicado equal")
-  } */
+  const compareResult = () => {
+    let array2= [];
+    array.map((item) => {
+      let x = Math.abs(objective - item)
+        array2.push(x)
+    })
+    let x = Math.min(...array2)
+    let y = array2.indexOf(x)
+    setFinalResult(array[y])
+  }
+  useEffect(() => {
+    compareResult();
+  },[array])
+ 
  
   return (
     <div  className={styles.__gamepanel_div}>

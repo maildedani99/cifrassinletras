@@ -15,6 +15,8 @@ const Blackboard = () => {
     pushOnLine,
     pushArray,
     removeNumber,
+    setFinalResult,
+    finalResult
   } = useContext(NumbersContext);
   const [numberLine, setNumberLine] = useState(1);
   const [line1, setLine1] = useState([]);
@@ -32,6 +34,7 @@ const Blackboard = () => {
     setLine4([]);
     setLine5([]);
     setNumberLine(1);
+    setFinalResult()
   };
   const calculate = () => {
     let a = calcLine[0];

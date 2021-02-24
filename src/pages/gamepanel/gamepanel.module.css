@@ -6,6 +6,7 @@
     width: 80%;
 }
 .__header_div {
+    border-top: 2px solid rgb(182, 182, 182);
     width: 90%;
     display: flex;
     flex-direction: row;
