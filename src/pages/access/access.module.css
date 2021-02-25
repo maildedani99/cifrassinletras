@@ -1,0 +1,69 @@
+.__login_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    min-height: 50vh;
+    align-content: center;
+    justify-content: center;
+    text-align: center;
+}
+.__input_div {
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+    border: 4px solid #7fa1a7;
+    /* box-shadow: 0 0 7px #7fa1a7; */
+    border-radius: 1rem;
+    padding: 3rem;
+    
+}
+.__input:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+}
+
+.__input {
+    margin: 2rem 0;
+    border: 2px solid #7fa1a7;
+    /* box-shadow: 0 0 7px #7fa1a7; */
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.__select_input {
+    text-align-last: center;
+    background-color: #7fa1a7;
+    margin: 2rem 0;
+    border: 2px solid #7fa1a7;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.__select_input:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+}
+
+.__option {
+    text-align-last: center;
+    font-size: 1.5rem;
+    text-align: center;
+}
+.__button {
+    background-color: #7fa1a7;
+    margin: 2rem 0;
+    border: 2px solid #7fa1a7;
+    border-radius: 0.5rem;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+.__button:hover {
+    cursor: pointer;
+}
+.__button:focus {
+    outline:none !important;
+    outline-width: 0 !important;
+    box-shadow: none;
+}
