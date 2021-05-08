@@ -1,12 +1,33 @@
 .__objective_div {
+    margin-top: 1rem;
     display: flex;
     flex-direction: row;
-    border: 7px solid#ff5959;
-    box-shadow: 0 0 7px #ff5959;
+    border: 4px solid#ff5959;
+    /* box-shadow: 0 0 7px #ff5959; */
     border-radius: 1rem;
     padding: 0rem 3rem;
 }
+.__nearest_result_div {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    border: 4px solid#49bd26;
+    /* box-shadow: 0 0 7px #ff5959; */
+    border-radius: 1rem;
+    padding: 0rem 3rem;
+
+}
 .__objective_number {
-    font-size: 8rem;
+    font-size: 6rem;
     font-family: 'Permanent Marker', cursive;
+}
+.nearest_result_number {
+    display: flex;
+    flex-direction: column;
+    font-size: 6rem;
+    font-family: 'Permanent Marker', cursive;
+}
+.objective_title {
+    font: size 5rem;
+    font-weight: 500;
 }

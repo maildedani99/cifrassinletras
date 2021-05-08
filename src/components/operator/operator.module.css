@@ -1,0 +1,6 @@
+.__operator_div {
+    border: 2px solid black;
+}
+.__operator_div>p {
+    font-size: 2rem;
+}

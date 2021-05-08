@@ -1,15 +1,53 @@
 
 .__numbers_div{
     display: flex;
+    flex-direction: row ;
+   
+}
+.__game_left_div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.__div_keys {
+    display: flex;
     flex-direction: row;
 }
 
 .__numbers_number_div {
-    border: 7px solid #4eb8ca;
-    box-shadow: 0 0 7px #4eb8ca;
+    
+    display: flex;
+    flex-direction: column;
+    border: 4px solid #4eb8ca;
+    /* box-shadow: 0 0 7px #4eb8ca; */
     border-radius: 1rem;
-    padding: 1rem;
+   
     font-size: 4rem;
     font-family: 'Permanent Marker', cursive;
     margin: 1rem;
+}
+.__numbers_number_div:hover {
+    cursor: pointer;
+}
+.__numbers_number_div > a {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
+}
+.__signs_sign_div {
+    border: 7px solid #7fa1a7;
+    box-shadow: 0 0 7px #7fa1a7;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+    font-family: 'Permanent Marker', cursive;
+    margin: 1rem;
+}
+.__signs_sign_div:hover {
+    cursor: pointer;
+}
+.__signs_sign_div > a {
+    padding: 1rem;
+    width: 100%;
+    height: 100%;
 }

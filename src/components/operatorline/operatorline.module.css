@@ -1,0 +1,9 @@
+.__operator_div {
+    display: flex;
+    flex-direction: row;
+}
+
+.__operator_div>p {
+    font-size: 3rem;
+    font-family: 'Permanent Marker', cursive;
+}
