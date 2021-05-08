@@ -1,5 +1,6 @@
 import React, { useEffect, useContext, useState } from "react";
 import styles from "./navbar.module.css";
+import logo from "../../media/logo.png";
 import { useHistory } from 'react-router-dom'
 import { LOGIN } from '../../routes';
 import { AccessContext } from "../../contexts/accesscontext";
@@ -41,7 +42,7 @@ const Navbar = () => {
   return (
     <div className={styles.__navbar}>
       <div className={styles.__navbar_item}>
-        <h1>Juego Cifras</h1>
+        <img src={logo} alt="Logo"  width="200px"/>
       </div>
       <div className={styles.__navbar_item}>
         <p>Alias: {alias.alias}</p>

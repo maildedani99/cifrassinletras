@@ -51,7 +51,7 @@ const Login = () => {
           placeholder="Alias"
           onChange={handleChangeAlias}
         />
-        <select className={styles.__select_input} onChange={handleChangeSelect}>
+        {/* <select className={styles.__select_input} onChange={handleChangeSelect}>
           <option selected value="">
             Select room
           </option>
@@ -65,15 +65,15 @@ const Login = () => {
                 placeholder="Select room"
               />
             ))}
-        </select>
+        </select> */}
           <input className={styles.__button} type="button" value="Enter Room" onClick={goToMain} />
        
-          <input
+          {/* <input
             className={styles.__button}
             type="button"
             value="Create Room"
             onClick={goToCreate}
-          />
+          /> */}
       </div>
     </div>
   );
