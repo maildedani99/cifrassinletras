@@ -3,7 +3,7 @@ import { Link, useHistory } from "react-router-dom";
 import { NumbersContext } from "../../contexts/numberscontext";
 import { AccessContext } from "../../contexts/accesscontext";
 import styles from "./login.module.css";
-import { LOGIN, MAIN, CREATEROOM } from "../../routes";
+import { LOGIN, MAIN, CREATEROOM, ACCESS } from "../../routes";
 
 const Login = () => {
   const {
@@ -33,6 +33,9 @@ const Login = () => {
     localStorage.setItem("alias", alias);
     history.replace(MAIN)
   }
+  const goToAccess = () => {
+    history.replace(ACCESS)
+  }
   const goToCreate = () => {
       history.replace(CREATEROOM)
   }
@@ -48,31 +51,20 @@ const Login = () => {
         <input
           className={styles.__input}
           type="text"
-          placeholder="Alias"
+          placeholder="Username"
           onChange={handleChangeAlias}
         />
-        <select className={styles.__select_input} onChange={handleChangeSelect}>
-          <option selected value="">
-            Select room
-          </option>
-          {rooms &&
-            rooms.map((item) => (
-              <option
-                className={styles.__option}
-                value={item.id}
-                name={item.name}
-                label={item.name + "  " + item.access}
-                placeholder="Select room"
-              />
-            ))}
-        </select>
-          <input className={styles.__button} type="button" value="Enter Room" onClick={goToMain} />
-       
-          <input
+        <input
+          className={styles.__input}
+          type="text"
+          placeholder="Password"
+          onChange={handleChangeAlias}
+        />
+           <input
             className={styles.__button}
             type="button"
-            value="Create Room"
-            onClick={goToCreate}
+            value="Login"
+            onClick={goToAccess}
           />
       </div>
     </div>
