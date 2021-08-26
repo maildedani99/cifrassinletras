@@ -9,7 +9,7 @@ import Signs from "../../components/signs/signs";
 
 const GamePanel = () => {
   const { room, getRoom } = useContext(AccessContext);
-  const { array, setArray, objective, product, setProduct, factor1, factor2, setFactor1, setFactor2, finalResult, setFinalResult} = useContext(NumbersContext);
+  const { array, setArray, objective, setObjective,  product, setProduct, factor1, factor2, setFactor1, setFactor2, finalResult, setFinalResult} = useContext(NumbersContext);
   
 
   const compareResult = () => {
@@ -22,9 +22,31 @@ const GamePanel = () => {
     let y = array2.indexOf(x)
     setFinalResult(array[y])
   }
+
+  const getNumbers = () => {
+    
+    let x;
+    for (let i = 0; i < 6; i++) 
+    { 
+      x=Math.floor(Math.random() * (20 - 1))
+      if (x!=0 && array.includes(x)==false)
+      {
+      array.push(x)
+      }
+      else i--; 
+    }
+    setObjective(Math.floor(Math.random() * (500 - 100)+100))
+  
+  };
+
+useEffect(() => {
+    getNumbers();
+},[])
   useEffect(() => {
     compareResult();
   },[array])
+  
+  
  
  
   return (

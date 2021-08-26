@@ -12,6 +12,7 @@ const AccessProvider = ( { children }) => {
     const [room, setRoom] = useState({})
     const [alias, setAlias] = useState({})
     const [id, setId] = useState()
+    const [users, setUsers] = useState([])
 
     const getRoomKey = () => {
         let caracteres = "BCDFGHJKMNPQRTVWXYZ12346789";
@@ -67,7 +68,7 @@ const AccessProvider = ( { children }) => {
 
     return (
         <Provider
-        value= { { getRoomKey, roomKey, roomName, setRoomName, setRoomKey, room, setRoom, alias, setAlias, rooms, getRooms, getRoom, id, setId } }>
+        value= { { getRoomKey, roomKey, roomName, setRoomName, setRoomKey, room, setRoom, alias, setAlias, rooms, getRooms, getRoom, id, setId, users, setUsers } }>
             { children }
         </Provider>
     )

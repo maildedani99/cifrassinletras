@@ -17,6 +17,10 @@ const Numbers = (props) => {
     pushOnLine(e);
   }
 
+  /* const getNumbers = () => {
+
+  } */
+
 
   return (
     <>
