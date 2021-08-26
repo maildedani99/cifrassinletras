@@ -16,7 +16,7 @@ function App() {
       <Router>
       <Switch>
       <AccessProvider>
-          <Route exact path={LOGIN}>
+          {/* <Route exact path={LOGIN}>
             <Login />
           </Route>
           <Route exact path={ACCESS}>
@@ -24,7 +24,7 @@ function App() {
           </Route>
           <Route exact path={CREATEROOM}>
             <CreateRoom />
-          </Route>
+          </Route> */}
           <NumbersProvider>
           <Route exact path={MAIN}>
             <Main />

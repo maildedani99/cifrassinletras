@@ -44,7 +44,7 @@ const Navbar = () => {
       <div className={styles.__navbar_item}>
         <img src={logo} alt="Logo"  width="200px"/>
       </div>
-      <div className={styles.__navbar_item}>
+      {/* <div className={styles.__navbar_item}>
         <p>Alias: {alias.alias}</p>
       </div>
       <div className={styles.__navbar_item}>
@@ -52,7 +52,7 @@ const Navbar = () => {
       </div>
       <div className={styles.__navbar_item}>
         <p>Key: {room.key}</p>
-      </div>
+      </div> */}
       <div className={styles.__navbar_item}>
           <p>
         <input className={styles.__navbar_button_new} type="button" value="New Game" onClick={newGame} />

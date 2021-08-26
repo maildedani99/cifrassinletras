@@ -60,38 +60,12 @@ const Login = () => {
           placeholder="Password"
           onChange={handleChangeAlias}
         />
-<<<<<<< HEAD
            <input
             className={styles.__button}
             type="button"
             value="Login"
             onClick={goToAccess}
           />
-=======
-        {/* <select className={styles.__select_input} onChange={handleChangeSelect}>
-          <option selected value="">
-            Select room
-          </option>
-          {rooms &&
-            rooms.map((item) => (
-              <option
-                className={styles.__option}
-                value={item.id}
-                name={item.name}
-                label={item.name + "  " + item.access}
-                placeholder="Select room"
-              />
-            ))}
-        </select> */}
-          <input className={styles.__button} type="button" value="Enter Room" onClick={goToMain} />
-       
-          {/* <input
-            className={styles.__button}
-            type="button"
-            value="Create Room"
-            onClick={goToCreate}
-          /> */}
->>>>>>> f85b5a97fe1b8a4a8e90137225b36dc2270f132b
       </div>
     </div>
   );

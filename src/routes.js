@@ -1,5 +1,5 @@
 export const LOGIN = '/';
-export const MAIN = '/main';
+export const MAIN = '/';
 export const ACCESS = '/access';
 
 export const CREATEROOM = '/createroom';
